@@ -23,9 +23,14 @@ useEffect (
      
       김경준
       {state.map((v) => (
+        <div>
         <div style={
           {padding: "10px", color: "blue"}}
         >{v.title}</div>
+        <div style={
+          {padding: "10px", color: "blue"}}
+        >{v.id}</div>
+        </div>
       )
       )}
     </div>
