@@ -22,8 +22,12 @@ function App() {
       <header>손재훈 </header>
       {state.map ((v) => (
            <div style={{ padding: "10px", color:"blue"}}>{v.title}</div>
+        
       ))}
-      
+      {state.map ((v) => (
+           <div style={{ padding: "10px", color:"blue"}}>{v.id}</div>
+        
+      ))}
     </div>
   );
 }
