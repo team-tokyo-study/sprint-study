@@ -19,6 +19,9 @@ state.length > 0 && console.log(state);
     {state.map((v) => (
        <div style={{padding: "10px", color: "blue"}}>{v.title}</div>
      ))}
+      {state.map((v) => (
+       <div style={{padding: "10px", color: "blue"}}>{v.id}</div>
+     ))}
     </div>
   );
 }
