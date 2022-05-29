@@ -10,20 +10,24 @@ function App() {
 axios.get(URL).then((res) => {
   setState(res.date);
 });
-state.length > 0 && console.log(state);
+state && console.log(state);
 }, []);
 
   return (
     <div>
-      <header>박진성</header>
+      박진성
     {state.map((v) => (
+      <div>
        <div style={{padding: "10px", color: "blue"}}>{v.title}</div>
-     ))}
-      {state.map((v) => (
+     
        <div style={{padding: "10px", color: "blue"}}>{v.id}</div>
-     ))}
-    </div>
+         </div>
+  )
+    )}
+  
+  </div>
   );
+  
 }
 
 export default App;
