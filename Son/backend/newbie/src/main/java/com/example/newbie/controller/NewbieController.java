@@ -6,9 +6,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 public class NewbieController {
-    @GetMapping("/mypage")
+    @GetMapping("/mypages")
     public String hello(Model model){
-        model.addAttribute("name","my page");
+        model.addAttribute("name","my pages");
         return "mypage";
     }
 
