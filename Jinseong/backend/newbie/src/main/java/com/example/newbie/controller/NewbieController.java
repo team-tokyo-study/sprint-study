@@ -11,5 +11,12 @@ public class NewbieController {
     public String hello(Model model) {
         model.addAttribute("name", "jinseong model");
         return "jinseong";
+
+        @GetMapping("/mypage")
+        public String mypage(Model model){
+            model.addAttribute("name", "mypage model");
+
+            return "mypage";
+        }
     }
 }
