@@ -9,10 +9,10 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
 public class NewbieController {
-    @GetMapping("/sangwoo")
+    @GetMapping("/kj")
     public String hello(Model model){
-        model.addAttribute("name", "sangwoo model");
-        return "sangwoo";
+        model.addAttribute("name", "kj model");
+        return "kj";
     }
 
     @GetMapping("/mypage")
@@ -26,8 +26,6 @@ public class NewbieController {
 
     public String createArticle(CreateDTO form) {
         System.out.println(form.toString());
-        Article article = form.toEntity();
-        System.out.println(article.toString());
 
         return "";
     }
