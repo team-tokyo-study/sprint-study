@@ -1,5 +1,7 @@
 package com.example.newbie.dto;
 
+import com.example.newbie.entity.Article;
+
 public class CreateDTO {
 
     private String title;
@@ -16,5 +18,8 @@ public class CreateDTO {
                 "title='" + title + '\'' +
                 ", content='" + content + '\'' +
                 '}';
+    }
+    public Article toEntity() {
+        return new Article(null, title, content);
     }
 }

@@ -13,13 +13,13 @@ import javax.persistence.Id;
 public class Article {
 @Id
 @GeneratedValue
-    private long id;
+    private Long id;
 @Column
 private String title;
 @Column
 
 private String content;
-public Article(long id, String title, String content) {
+public Article(Long id, String title, String content) {
     this.id = id;
     this.title = title;
     this.content = content;
