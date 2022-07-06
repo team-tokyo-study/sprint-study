@@ -28,7 +28,7 @@ public class Article { // Article이라는 공개 클래스 생성
     }
 
     @Override
-    public String toString() { // 객체를 문자열 형태로 바꾸어 출력 (id가 롱 값이기 때문에 사용?)
+    public String toString() { // 객체를 문자열 형태로 바꾸어 출력
         return "Article{" +
                 "id=" + id + // @GeneratedValue로 글 쓸 때마다 아이디값이 한 개씩 증가
                 ", title='" + title + '\'' + // 입력받은 제목을 출력

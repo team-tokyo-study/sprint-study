@@ -23,7 +23,7 @@ public class NewbieController { // NewbieController라는 어디서나 접근 �
 
     @GetMapping("/mypage") // Get요청을 처리하는 메소드를 /mypage에 맵핑. 보여질때는 get방식이지만 글쓰기가 실행되면 post방식으로 넘어감
     public String mypage(Model model){
-        model.addAttribute("name", "mypage model"); // mypage model이라는 값이 /mypage에서 표시안되는데 지정해야되는 이유는?
+        model.addAttribute("name", "mypage model");
 
         return "mypage"; // view에 넘기기
     }
@@ -39,5 +39,7 @@ public class NewbieController { // NewbieController라는 어디서나 접근 �
 
         return "";
     }
+
+   
 
 }
