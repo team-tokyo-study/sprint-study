@@ -40,6 +40,6 @@ public class NewbieController { // NewbieController라는 어디서나 접근 �
         return "";
     }
 
-   
+
 
 }
