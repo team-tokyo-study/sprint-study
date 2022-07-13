@@ -1,0 +1,66 @@
+.exchange-box {
+    border: 1px solid black;
+    width: 400px; /*박스 중 가장 큰 박스(부모박스)의 사이즈가 400px*/
+    margin: auto;
+}
+
+.dropbtn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    width: 100%; /*부모박스와 같은 너비를 사용하겠다*/
+    margin: auto;
+}
+
+  /* The container <div> - needed to position the dropdown content */
+.dropdown {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    margin: auto;
+}
+
+  /* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    display: none; /*기본적으로 드랍다운 메뉴를 숨긴다(none)*/
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    width: 100%;
+    margin: auto;
+}
+
+  /* Links inside the dropdown */
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+  /* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+  /* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content { /*드랍다운 메뉴가 호버오버될 때는*/
+    display: block; /*메뉴를 보여준다(block)*/
+}
+
+  /* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {
+    background-color: #3e8e41;
+}
+
+.input-area {
+    width: 100%;
+}
+
+.input-area input {
+    width: 100%;
+    box-sizing: border-box;
+}
