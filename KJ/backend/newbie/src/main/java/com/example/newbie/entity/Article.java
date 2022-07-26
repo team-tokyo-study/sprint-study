@@ -1,6 +1,7 @@
 package com.example.newbie.entity;
 
 import lombok.AllArgsConstructor;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 import org.springframework.stereotype.Controller;
@@ -14,6 +15,8 @@ import javax.persistence.Id;
 @AllArgsConstructor // 모든 변수를 사용하는 생성자를 자동완성 시켜주는 어노테이션
 @ToString // 클래스의 변수들을 기반으로 ToString 메소드를 자동으로 완성시켜 주는 어노테이션
 @NoArgsConstructor // 어떤 필드도 존재하지 않는 기본 생성자를 자동생성해주는 어노테이션
+@Getter
+
 public class Article { // Article이라는 공개 클래스 생성
 
 

@@ -1,0 +1,27 @@
+{{>layout/header}} {{!layout/header.mustache 적용}}
+
+<h1> Board</h1>
+<table class="table">
+    <thead>
+    <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Title</th>
+        {{!<th scope="col">Content</th>}}
+    </tr>
+    </thead>
+    <tbody>
+    {{#articleList}}  {{! 컨트롤러에서 받아온 데이터를 articleList이란 변수 값으로 받아와 id, title, content의 리스트를 출력}}
+        <tr>
+            <th>{{id}}</th>
+            <td>
+            <a href="/article/{{id}}">{{title}}</a>
+            </td>
+            {{!<td>중괄호두개열고content중괄호두개닫기</td>}}
+        </tr>
+    {{/articleList}}
+    </tbody>
+</table>
+<div align="center"><a href="/mypage"class="btn btn-primary">Write</a></div>
+{{!/mypage로 링크된 Write버튼 가운데정렬}}
+
+{{>layout/footer}}

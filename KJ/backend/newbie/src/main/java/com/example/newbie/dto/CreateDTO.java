@@ -8,7 +8,7 @@ import lombok.ToString;
 @ToString // 클래스의 변수들을 기반으로 ToString 메소드를 자동으로 완성시켜 주는 어노테이션
 
 public class CreateDTO { // CreateDTO라는 클래스
-
+    private Long id; // id필드
     private String title; // title 필드
     private String content; // content 필드
 
@@ -28,6 +28,8 @@ public class CreateDTO { // CreateDTO라는 클래스
      }
      */
 
-    public Article toEntity() {return new Article(null, title, content);} //id로 null값, String title과 String content를 파라미터로 가짐 (동작)
+    public Article toEntity() {
+        return new Article(id, title, content);
+    } //id값, String title과 String content를 파라미터로 가짐 (동작)
 
 }
