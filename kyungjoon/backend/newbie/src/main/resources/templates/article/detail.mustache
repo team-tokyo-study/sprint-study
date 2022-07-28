@@ -1,0 +1,56 @@
+{{>layout/header}} {{!layout/header.mustache 적용}}
+
+<h1>Detail page</h1>
+<table class="table">
+    <thead>
+    <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Title</th>
+        <th scope="col">Content</th>
+    </tr>
+    </thead>
+    <tbody>
+    {{#article}} {{! 컨트롤러에서 받아온 데이터를 article이란 변수 값으로 받아와 id, title, content값을 출력}}
+        <tr>
+            <th>{{id}}</th>
+            <td>{{title}}</td>
+            <td>{{{content}}}</td>  {{!중괄호 두 개와 세 개의 차이 : https://taegon.kim/archives/4910 변수 보기}}
+        </tr>
+    {{/article}}
+    </tbody>
+</table>
+
+<a class="edit btn btn-primary">Edit</a>
+{{!/article/id/edit로 링크된 Edit버튼}}
+<a class="delete btn btn-danger">Delete</a>
+{{!/article/id/delete로 링크된 Delete버튼}}
+<a href="/article" class="btn btn-primary">List</a>
+{{!/article로 링크된 List(로 돌아가기)버튼}}
+
+
+<script>
+    document.querySelector('.delete').addEventListener('click', function() {
+    var result = window.confirm('삭제하시겠습니까?');
+
+    if (result) {
+        window.location = "/article/{{article.id}}/delete"
+        }
+        else {
+            return;
+            }
+    });
+
+    document.querySelector('.edit').addEventListener('click', function() {
+    var edit = window.confirm('수정하시겠습니까?');
+
+    if (edit) {
+        window.location = "/article/{{article.id}}/edit"
+        }
+        else {
+            return;
+            }
+    });
+</script>
+
+
+{{>layout/footer}}
