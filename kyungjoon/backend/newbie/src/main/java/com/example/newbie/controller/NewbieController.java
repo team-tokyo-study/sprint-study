@@ -75,7 +75,7 @@ public class NewbieController { // NewbieController라는 어디서나 접근 �
         model.addAttribute("articleList", articleList);
         // 2. addAttribute("변수명", "값") 메소드를 사용하여 articleList에 담긴 데이터를 "articleList"이란 변수명으로 지정 후 모델에 등록
 
-        return "article/index";
+            return "article/index";
         // 3. 뷰에서 보여줄 페이지 설정 (index.mustache에 작성된 내용을 보여줌)
     }
 

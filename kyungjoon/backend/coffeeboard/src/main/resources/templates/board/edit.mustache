@@ -1,0 +1,19 @@
+{{>layout/header}} {{!layout/header.mustache 적용}}
+
+{{#board}}  {{! 컨트롤러에서 받아온 데이터를 article이란 변수 값으로 받아와 id, title, content값을 출력}}
+    <form class="container" action="/board/edit" method="post">
+        <input name="no" type="hidden" value="{{no}}" />
+        <div class="mb-3">
+            <label class="form-label">Menu</label>
+            <input type="text" class="form-control" name="menu" value="{{menu}}">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Price</label>
+            <textarea class="form-control" rows="3" name="price">{{price}}</textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+        <a href="/board/{{no}}" class="btn btn-primary">Back</a>
+    </form>
+{{/board}}
+
+{{>layout/footer}}
