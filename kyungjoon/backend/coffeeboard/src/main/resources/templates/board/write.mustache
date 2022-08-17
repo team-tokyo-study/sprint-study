@@ -1,0 +1,19 @@
+{{>layout/header}}  {{!layout/header.mustache 적용}}
+
+<form class="container" action="/board/write/create" method="post">
+    <div class="mb-3">
+        <label class="form-label">Menu</label>
+        <br>
+        <input name="menu" type="text" class="form-control"/>
+    </div>
+    <br>
+    <div class="mb-3">
+        <label class="form-label">Price</label>
+        <br>
+        <textarea name="price" class="form-control" rows="5"></textarea>
+    </div>
+    <br>
+    <button type="submit" class="btn btn-primary">Submit</button>
+    <a href="/board" class="btn btn-primary">Back</a>
+
+</form>

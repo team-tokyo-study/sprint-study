@@ -1,0 +1,26 @@
+{{>layout/header}} {{!layout/header.mustache 적용}}
+
+<h1 style="text-align:center"> Coffee Menu </h1>
+<table class="table">
+    <thead>
+    <tr>
+        <th scope="col">No. </th>
+        <th scope="col">Menu</th>
+        <th scope="col">Price</th>
+    </tr>
+    </thead>
+    <tbody>
+    {{#boardList}}
+        <tr>
+            <td>{{no}}</td>
+            <td>
+                <a href="/board/{{no}}">{{menu}}</a>
+            </td>
+            <td>{{price}}</td>
+        </tr>
+    {{/boardList}}
+    </tbody>
+</table>
+<div align="center"><a href="/board/write" class="btn btn-primary">Add</a></div>
+
+{{>layout/footer}}
