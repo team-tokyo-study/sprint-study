@@ -46,21 +46,25 @@ public class CoffeeController {
     }
 
     @GetMapping("/board/{no}")
-    public String detail (@PathVariable Long no, Model model) {
+    public String detail (@PathVariable Long no, Model model) { // 모델 객체를 Long id값에 담아 가져오는 detail이라는 메소드 선언
         log.info("Number is" + no);
 
         Board boardEntity = boardRepository.findById(no).orElse(null);
+        // 1. Repository에서 해당 id를 읽어와 boardEntity라는 객체에 전달하여 저장. id가 존재하지 않을 경우 null
         model.addAttribute("board", boardEntity);
+        // 2. boardEntity로 전달된 데이터를 board라는 이름으로 모델에 등록
 
         return "/board/detail";
     }
 
     @GetMapping("/board")
-    public String list (Model model) {
+    public String list (Model model) { // // 모델 객체를 가져오는 list라는 메소드 선언
         List<Board> boardList = boardRepository.findAll();
+        // 1. boardRepository에서 값을 가져와 List<Board>타입의 boardList 객체에 저장
         log.info("Board list is " + boardList);
 
         model.addAttribute("boardList", boardList);
+        // 2. boardList로 전달된 데이터를 boardList라는 이름으로 모델에 등록
 
         return "board/list";
     }
@@ -70,8 +74,9 @@ public class CoffeeController {
         log.info("Number is" + no);
 
         Board boardEntity = boardRepository.findById(no).orElse(null);
+        // 1. Repository에서 해당 id를 읽어와 boardEntity라는 객체에 전달하여 저장. id가 존재하지 않을 경우 null
         model.addAttribute("board", boardEntity);
-
+        // 2. boardList로 전달된 데이터를 boardList라는 이름으로 모델에 등록
         return "board/edit";
     }
 
@@ -80,15 +85,17 @@ public class CoffeeController {
         log.info(form.toString());
 
         Board boardEntity = form.toEntity();
+        // 1. 전달된 DTO의 데이터를 엔티티로 변환
         log.info(boardEntity.toString());
 
         Board target = boardRepository.findById(boardEntity.getNo()).orElse(null);
-
-        if (target != null){
-            boardRepository.save(boardEntity);
+        // 2. boardRepository가 DB에서 id값을 검색 후 해당 데이터를 받아와 엔티티에 전달 및 저장
+        if (target != null){ // // 검색한 id가 엔티티에 저장되어 있으면
+            boardRepository.save(boardEntity); // // 엔티티가 저장되어 레포지토리로 전달, DB가 갱신
         }
 
         return "redirect:/board/" + boardEntity.getNo();
+        // 수정결과 페이지로 리다이렉트
     }
 
     @GetMapping("/board/{no}/delete")

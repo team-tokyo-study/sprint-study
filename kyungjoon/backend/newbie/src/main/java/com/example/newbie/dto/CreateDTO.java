@@ -2,11 +2,14 @@ package com.example.newbie.dto;
 
 import com.example.newbie.entity.Article;
 import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.RequiredArgsConstructor;
 import lombok.ToString;
 
 @AllArgsConstructor // 모든 변수를 사용하는 생성자를 자동완성 시켜주는 어노테이션
 @ToString // 클래스의 변수들을 기반으로 ToString 메소드를 자동으로 완성시켜 주는 어노테이션
-
+@RequiredArgsConstructor
+@Data
 public class CreateDTO { // CreateDTO라는 클래스
     private Long id; // id필드
     private String title; // title 필드
